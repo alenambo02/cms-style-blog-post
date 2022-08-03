@@ -7,7 +7,6 @@ const helpers = require('./utils/helpers');
 
 
 const sequelize = require('./config/connection');
-const exp = require('constants');
 //documentation informs us that this is how you connect sequelize sess for express
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
