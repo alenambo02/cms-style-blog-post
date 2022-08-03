@@ -2,12 +2,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   #Table of Content
-  -[description](#Description)
-  -[installation](#Installation)
-  -[usage](#Usage)
-  -[credits](#Credits)
-  -[license](#License)
-  -[contact](#Contact)
+  - [description](#Description)
+  - [installation](#Installation)
+  - [usage](#Usage)
+  - [credits](#Credits)
+  - [license](#License)
+  - [contact](#Contact)
 
   ## Description:
   The purpose behind this project was to create a CMS-style blog site were developers can publish their blog posts and comment on other developers posts as well. This project will showcase an MVC application which will contain model classes, view templates, and controller classes.
