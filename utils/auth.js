@@ -1,5 +1,5 @@
 const withAuth = (req, res, next) => {
-    // authorizes user
+    // helper function to only allow users to do certain things when logged in
     if (!req.session.logged_in) {
       res.redirect('/login');
     } else {
