@@ -8,6 +8,7 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
+//only item that needs withAuth is route to go to dashboard
 //check this if this fails (above might be ../../)
 
 router.get('/', async (req, res) => {
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
+    // This will render the homepage for the user
     res.render('homepage', { 
       posts, 
       logged_in: req.session.logged_in 
@@ -57,8 +58,8 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-// profile = dashboard // dashboard has "add/create" button
+// Use withAuth helper to not allow user to access without being logged in
+// dashboard // dashboard has "add/create" button
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -79,9 +80,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is logged in then redirect them to their dashbaord
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/dashboard');
     return;
   }
 
