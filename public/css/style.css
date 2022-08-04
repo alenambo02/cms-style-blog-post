@@ -1,4 +1,4 @@
-header, .post:not(:last-child) {
+header {
     background-color: rgb(30, 17, 17);
     height: 100px;
 }

@@ -11,6 +11,6 @@ const dashboardRoutes = require('./dashboardRoutes');
 //an using them as arguments now '/' knows its route is the homepage etc
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/dashboard', apiRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;
