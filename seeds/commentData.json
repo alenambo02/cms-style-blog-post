@@ -1,16 +1,16 @@
 [
     {
-        "username": "Soso",
+        "user_id": "1",
         "content": "Wow, amazing post!",
         "post_id": "1"
     },
     {
-        "username": "Juanito",
+        "user_id": "2",
         "content": "Truly, inspiring. Love it!",
         "post_id": "2"
     },
     {
-        "username": "Pats",
+        "user_id": "3",
         "content": "Mid post bro!",
         "post_id": "3"
     }
