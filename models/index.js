@@ -23,10 +23,6 @@ Post.hasMany(Comment, {
     onDelete: "CASCADE",
 });
 
-Comment.hasOne(Post, {
-  foreignKey: "post_id",
-});
-
 //  Ale can have many comments
 User.hasMany(Comment, {
     foreignKey: "user_id",
