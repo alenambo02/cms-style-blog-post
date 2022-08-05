@@ -1,41 +1,34 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 //do i need comment? cause its not like ima comment my own post ??
 
 // get that users route to all their post 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
   try {
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.user_id,
+        user_id: req.params.user_id,
       },
     });
   
     const posts = postData.map((post) => post.get({ plain:true }));
 
-    res.render('post', {
+    res.render('dashboard', {
       ...posts,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      user_id: req.params.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-    // res.render(200).json('mypost', {
-//       layout: 'dashboard',
-//       posts,
-//     });
-//   } catch (err) {
-//     res.redirect('login');
-//   }
-// });
 
 
-router.post('/dashboard', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     
   try {
     const postData = await Post.create(req.body);

@@ -11,3 +11,22 @@ a {
     color: white;
 }
 
+#box {
+    border-style: double;
+}
+
+#headerPost {
+    background-color: rgb(30, 17, 17);
+    color: white;
+}
+
+#postbox {
+    background-color: rgb(223, 216, 208);
+}
+
+#titlebox {
+    background-color: rgb(105, 96, 85);
+    font-weight: bolder;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}

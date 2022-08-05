@@ -29,9 +29,6 @@
     - bcrypt
 
 
-    - Dotenv was also utilized to store configuration in a seprate location from code. Dotenv loads environment variables from the .env file and moves it into process. env.
-
-
   Below, I have displayed how I utilized sequelize to create a post:
 
    ![alt text](./assets/get%20route.png)
@@ -48,13 +45,13 @@
 
   ## Usage:
 
-
+  When you first visit this blog site you will be able to view blog post others or yourself have created. In order to get the full functionality of this site you will need
 
   
   
  
   ```
-code-snippet
+  code-snippet
 
   ```
 
