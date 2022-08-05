@@ -1,14 +1,15 @@
 // create a function that will create a post 
 //form handlers
-const addPostFormHandler = async (event) => {
+
+const editPostHandler = async (event) => {
     event.preventDefault();
   
     // Uses query selectors to grab html generated with handlebars
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const title = document.querySelector('#edit-post-title').value.trim();
+    const content = document.querySelector('#edit-post-content').value.trim();
   
-    if (email && password) {
-      const response = await fetch('/api/user/login', {
+    if (title && content) {
+      const response = await fetch('/dashbaord/update/${id}', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },

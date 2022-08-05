@@ -16,14 +16,23 @@ router.get('/dashboard', withAuth, async (req, res) => {
   
     const posts = postData.map((post) => post.get({ plain:true }));
 
-    res.render(200).json('mypost', {
-      layout: 'dashboard',
-      posts,
+    res.render('post', {
+      ...posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
-    res.redirect('login');
+    res.status(500).json(err);
   }
 });
+
+    // res.render(200).json('mypost', {
+//       layout: 'dashboard',
+//       posts,
+//     });
+//   } catch (err) {
+//     res.redirect('login');
+//   }
+// });
 
 
 router.post('/dashboard', withAuth, async (req, res) => {

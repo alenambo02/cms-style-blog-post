@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
   try {
     const postData = await Post.findAll({
@@ -30,7 +30,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/dashboard/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     
   try {
     const postData = await Post.update(
