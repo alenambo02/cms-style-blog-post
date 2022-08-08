@@ -1,7 +1,7 @@
 //relationship 
-const User = require('./Person');
-const Post = require('./Bigmessage');
-const Comment = require ('./Message')
+const User = require('./User');
+const Post = require('./Post');
+const Comment = require ('./Comment')
 
 
 //  ale can have many posts 
